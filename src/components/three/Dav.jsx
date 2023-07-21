@@ -1,7 +1,9 @@
 
 import { useGLTF } from "@react-three/drei";
+import * as THREE from "three";
 
 export function Dav(props) {
+  const david = new THREE.MeshBasicMaterial({color:0xff00ff})
   const { nodes, materials } = useGLTF("/3D.gltf");
   return (
     <>
@@ -11,7 +13,9 @@ export function Dav(props) {
           castShadow
           receiveShadow
           geometry={nodes["TQ_ARD-geom001"].geometry}
-          material={materials["TQ_ARD_front.001"]}
+          // material={materials["TQ_ARD_front.001"]}
+          name="meshPhongMaterial"
+          material={new THREE.MeshPhongMaterial( { color: 0xff0000 } )}
         />
         <mesh
           castShadow
