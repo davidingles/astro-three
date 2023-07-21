@@ -1,7 +1,7 @@
 import { ContactShadows, Environment, OrbitControls, Stage } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
 import { Suspense } from 'react'
-import { Dav } from '../components/Dav'
+import { Dav } from './Dav'
 import styles from './Index.module.css'
 
 const estilos = {
@@ -42,6 +42,7 @@ const Model = () => {
                   scale={.5}
                   position={[-.0,0.1,-0.00]}
                   rotation={[Math.PI / 1000, 0, 0]}
+                  materials='TQ_ARD_front.001'
                 />
         
             </Suspense>
@@ -57,4 +58,4 @@ const Model = () => {
 
 
 
-export default Model
+export default ModelAlone
