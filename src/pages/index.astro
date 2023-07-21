@@ -1,12 +1,39 @@
 ---
-import Model from '../components/three/Model'
-import Layout from '../layouts/Layout.astro';
+import B1_cerrada from '../components/three/B1_cerrada'
+import Bandeja_acotada from '../components/three/Bandeja_acotada'
+import Estuche_con_asas from '../components/three/Estuche_con_asas'
+import Layout from '../layouts/Layout.astro'
 ---
 
-<Layout title="david">
-    <div class="m-auto w-2/3 flex justify-center gap-4 h-auto rounded-[]">
-        <Model client:load/>
-        <Model client:load/>
-        <Model client:load/>
+<Layout title='david'>
+    <div
+        class='m-auto max-w-[88%] py-[9rem] flex flex-wrap justify-center gap-8 h-auto [&>div]:cursor-pointer [&>div]:rounded-xl [&>div]:shadow-md'
+    >
+        <div class="uno relative  hover:scale-105 shadow-md transition-all duration-300">
+            <button class="absolute top-0 left-0 w-[3rem] h-[3rem] bg-red-400"></button>
+            <B1_cerrada client:load />
+        </div>
+        <div class="hover:scale-105 transition-all duration-300">
+            <Bandeja_acotada client:load />
+        </div>
+        <div class="hover:scale-105 transition-all duration-300">
+            <Estuche_con_asas client:load />
+        </div>
+        <div class="hover:scale-105 transition-all duration-300">
+            <B1_cerrada client:load />
+        </div>
+        <div class="hover:scale-105 transition-all duration-300">
+            <Bandeja_acotada client:load />
+        </div>
+        <div class="hover:scale-105 transition-all duration-300">
+            <Estuche_con_asas client:load />
+        </div>
     </div>
 </Layout>
+
+<script>
+    const btn = document.querySelector('.uno')
+    btn.addEventListener('click', () => {
+        console.log('hola')
+    })
+</script>

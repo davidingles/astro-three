@@ -39,13 +39,12 @@ export function Dav(props) {
 
 useGLTF.preload("/models/B1_cerrada.gltf");
 
-const Model = () => {
+const B1_cerrada = () => {
 
   return (
         <div style={{backgroundColor: 'rgba(0,0,0,0)'}}>
         
           <Canvas
-            className='shadow-xl'
             style={{ width: '100%', margin:'auto'}}
             camera={{view:
               {
@@ -83,4 +82,4 @@ const Model = () => {
         </div>
   )
 }
-export default Model
+export default B1_cerrada
