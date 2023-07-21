@@ -1,19 +1,12 @@
 ---
-import Three from "../components/Three.astro";
-import Model from "../components/Model.jsx";
-import ModelAlone from "../components/Model.jsx";
+import Model from '../components/three/Model'
+import Layout from '../layouts/Layout.astro';
 ---
 
-<Three client:load/>
-<div class="m-auto w-2/3 grid grid-cols-2 md:grid-cols-4 gap-4 h-[55vh] border-8">
-    <Model client:load/>
-    <Model client:load/>
-    <Model client:load/>
-    <Model client:load/>
-    <Model client:load/>
-    <Model client:load/>
-    <Model client:load/>
-    <Model client:load/>
-</div>
-
-<ModelAlone/>
+<Layout title="david">
+    <div class="m-auto w-2/3 grid grid-cols-2 md:grid-cols-4 gap-4 h-[55vh] border-8">
+        <Model client:load/>
+        <Model client:load/>
+        <Model client:load/>
+    </div>
+</Layout>

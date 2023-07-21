@@ -4,20 +4,9 @@ import { Suspense } from 'react'
 import { Dav } from './Dav'
 import styles from './Index.module.css'
 
-const estilos = {
-
-  color: '#dfac12',
-
-}
-
-
-
 const Model = () => {
 
   return (
-    <>
-    
-      <div>
         <div className={styles.canvas} style={{backgroundColor: 'rgba(0,0,0,0)'}}>
         
           <Canvas
@@ -42,7 +31,6 @@ const Model = () => {
                   scale={.5}
                   position={[-.0,0.1,-0.00]}
                   rotation={[Math.PI / 1000, 0, 0]}
-                  materials='TQ_ARD_front.001'
                 />
         
             </Suspense>
@@ -50,12 +38,6 @@ const Model = () => {
             <ContactShadows resolution={1024} scale={1} position={[0, -.01, 0]} blur={3} opacity={.3} far={1} color="#8a6246" />
           </Canvas>
         </div>
-      </div>
-    </>
-
   )
 }
-
-
-
-export default ModelAlone
+export default Model
