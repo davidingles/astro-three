@@ -1,17 +1,24 @@
 ---
-
+export interface Props {
+    id: string
+    nombre: string
+    precio?: number
+    imagen: string
+}
+const { id, nombre, imagen } = Astro.props;
 ---
 
+
+
 <main>
-    <h1>Auxiliar Manipuladora del Cartón</h1>
-
-    <div>
+    <a href={`/${id}`}>
+        <!-- { console.log(id)} -->
         <img 
-            src="/cajas/3D CHERRY.png" 
-            alt=""
+            src={imagen} 
+            alt={nombre}
             class="w-full h-full"
-
+            style={`view-transition-name: cata-${id};`}
         >
-    </div>
+    </a>
 
 </main>

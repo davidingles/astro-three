@@ -1,4 +1,7 @@
 ---
+import TemplateCatalogo from "./TemplateCatalogo.astro";
+// import { catalogo } from "src/data/catalogo";
+
 const catalogo = [
     {
         id: '1',
@@ -20,21 +23,16 @@ const catalogo = [
     },
 ]
 
-import Layout from "@/layouts/Layout.astro";
-// import { catalogo } from "src/data/catalogo";
-
-const { cata } = Astro.params
-
-const info = catalogo.find( b => b.id === cata)
-
-if (!info) {
-  return Astro.redirect("/404")
-}
-
 ---
 
-<Layout title={ info.nombre }>
-    <div class="w-2/3 h-2/3">
-        <img src={info.imagen} alt={info.nombre} class="w-full h-full">
-    </div>
-</Layout>
+<ul class="flex flex-cols-6">
+    {
+        catalogo.map(({id, nombre, imagen}) => {
+            return (
+                <li>
+                    <TemplateCatalogo id={id} nombre={nombre} imagen={imagen} />
+                </li>
+            )
+        })
+    }
+</ul>
